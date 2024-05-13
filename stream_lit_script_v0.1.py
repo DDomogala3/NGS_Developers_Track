@@ -11,8 +11,6 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data)
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
     region = '11:524657,5246555'
     Pyview = pysam.view(stringio,region)
     st.write(Pyview)
