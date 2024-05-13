@@ -1,3 +1,2 @@
 tk
 pysam
-bcftools
