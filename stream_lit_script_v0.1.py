@@ -12,5 +12,5 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data)
     region = '11:524657,5246555'
-    Pyview = pysam.view(stringio,region)
+    Pyview = pysam.view(uploaded_file.name,region)
     st.write(Pyview)
