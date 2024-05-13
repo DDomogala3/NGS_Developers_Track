@@ -25,6 +25,6 @@ if uploaded_file is not None:
         
 st.download_button(
     label="Download vcf",
-    data=vcf,
+    data=HBB_vcf,
     file_name="Galaxy117-[HBB_Gene]_streamlit.vcf",
     mime="vcf",)
