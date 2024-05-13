@@ -1,5 +1,7 @@
 import streamlit as st
 import pysam
+from io import StringIO
+
 st.write("This is the first streamlit app.")
 st.write("Please answer quiz question 1")
 st.user_info = "DDD"
