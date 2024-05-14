@@ -37,7 +37,7 @@ if uploaded_file is not None:
 #        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
  #       st.write(vcf)
  #       f.write(vcf)
-    generate_vcf(uploaded_file,output)
+    generate_vcf(uploaded_file.name,output)
     st.download_button(
     label="Download vcf",
     data = vcf,
