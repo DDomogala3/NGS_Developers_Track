@@ -10,6 +10,12 @@ st.text_input("What is soft clipping an alignment file?: " )
 st.header("Variant Calling Pipelining APP")
 st.markdown( "**Step 1)** Please both upload your BAM, BCF (pileup), or VCF file to the **class github repo** (https://github.com/DDomogala3/NGS_Developers_Track/) and upload the file and press the download button." )
 st.markdown( "**Step 2)** Download output to your computer after analysis  finishes.")
+
+
+
+
+# Go from BCF (pileup to Variant Calling Format (VCF) 
+st.markdown("Upload :red[BCF] to :green[VCF]")
 uploaded_file = st.file_uploader("Please upload BCF file: ")
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
