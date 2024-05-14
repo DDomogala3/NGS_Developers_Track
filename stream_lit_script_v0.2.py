@@ -3,7 +3,7 @@ from pysam import bcftools
 import os
 from st_files_connection import FilesConnection
 
-conn = st.connection('gcs',type = FilesConnection)
+conn = st.experimental_connection('gcs',type = FilesConnection)
 COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip", input_format= "None", ttl = 600)
 path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
 st.header("NGS Developer's APP FINAL PROJECT 2024")
