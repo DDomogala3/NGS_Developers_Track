@@ -14,7 +14,7 @@ st.markdown( "**Step 2)** Download output to your computer after analysis  finis
 
 def generate_vcf(input,output):
     with open("output","w") as f:
-        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
+        vcf = bcftools.call(input,"-o", "input", "-c")
         st.write(vcf)
         f.write(vcf)
 
@@ -43,4 +43,4 @@ st.download_button(
     data = vcf,
     file_name="output",
     mime="vcf",)
-#generate_vcf(uploaded_file,output)
+#generate_vcf(uploaded_file.name,output)
