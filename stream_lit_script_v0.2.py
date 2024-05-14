@@ -12,7 +12,11 @@ st.markdown( "**Step 1)** Please both upload your BAM, BCF (pileup), or VCF file
 st.markdown( "**Step 2)** Download output to your computer after analysis  finishes.")
 
 
-
+def generate_vcf(input,output):
+    with open("output","w") as f:
+        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
+        st.write(vcf)
+        f.write(vcf)
 
 # Go from BCF (pileup to Variant Calling Format (VCF) 
 st.markdown("Upload :red[BCF] to :green[VCF]")
@@ -28,15 +32,15 @@ if uploaded_file is not None:
     #print(Pyview)
     #st.write(Pyview)
 output = st.text_input("Please name your output vcf file: ")
-    def generate_vcf(input,output):
-        with open("output","w") as f:
-            vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
-            st.write(vcf)
-            f.write(vcf)
+#def generate_vcf(input,output):
+#    with open("output","w") as f:
+#        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
+ #       st.write(vcf)
+ #       f.write(vcf)
 
-            st.download_button(
-            label="Download vcf",
-            data = vcf,
-            file_name="output",
-            mime="vcf",)
+        st.download_button(
+        label="Download vcf",
+        data = vcf,
+        file_name="output",
+        mime="vcf",)
        generate_vcf(uploaded_file,output)
