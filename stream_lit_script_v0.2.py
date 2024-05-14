@@ -2,7 +2,8 @@ import streamlit as st
 from pysam import bcftools
 import os
 path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
-st.markdown(<h><b>"NGS Developer's APP FINAL PROJECT 2024"</b></h>)
+st.header("NGS Developer's APP FINAL PROJECT 2024")
+st.subheader("Developed by Dan Domogala and Allison Bellman")
 st.write("Please answer quiz question 1")
 st.user_info = "DDD"
 st.text_input("What is soft clipping an alignment file?: " )
