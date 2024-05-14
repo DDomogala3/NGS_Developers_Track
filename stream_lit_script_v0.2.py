@@ -13,7 +13,7 @@ st.markdown( "**Step 2)** Download output to your computer after analysis  finis
 
 
 def generate_vcf(input,output):
-    with open("output","w") as f:
+    with open(output,"w") as f:
         vcf = bcftools.call(input,"-o", output, "-c")
         st.write(vcf)
         f.write(vcf)
