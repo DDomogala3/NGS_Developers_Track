@@ -17,7 +17,7 @@ def generate_vcf(input,output):
         vcf = bcftools.call(input,"-o", output, "-c")
         st.write(vcf)
         f.write(vcf)
-        generate_vcf(uploaded_file.name,output)
+     
     st.download_button(
     label="Download vcf",
     data = vcf,
