@@ -27,14 +27,16 @@ if uploaded_file is not None:
     #Pyview = pysam.view(uploaded_file.name,region)
     #print(Pyview)
     #st.write(Pyview)
+output = st.text_input("Please name your output vcf file: ")
+    def generate_vcf(input,output):
+        with open("output","w") as f:
+            vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
+            st.write(vcf)
+            f.write(vcf)
 
-    with open("Galaxy117-[HBB_Gene]_streamlit.vcf","w") as f:
-        HBB_vcf = bcftools.call(uploaded_file.name,"-o", "Galaxy117-[HBB_Gene].vcf", "-c")
-        st.write(HBB_vcf)
-        f.write(HBB_vcf)
-
-        st.download_button(
-        label="Download vcf",
-        data = HBB_vcf,
-        file_name="Galaxy117-[HBB_Gene]_streamlit.vcf",
-        mime="vcf",)
+            st.download_button(
+            label="Download vcf",
+            data = vcf,
+            file_name="output",
+            mime="vcf",)
+       generate_vcf(uploaded_file,output)
