@@ -21,7 +21,7 @@ def generate_vcf(input,output):
     st.download_button(
     label="Download vcf",
     data = vcf,
-    file_name="output",
+    file_name=output,
     mime="vcf",)
     return vcf
 
