@@ -17,6 +17,7 @@ def generate_vcf(input,output):
         vcf = bcftools.call(input,"-o", output, "-c")
         st.write(vcf)
         f.write(vcf)
+        return vcf
 
 # Go from BCF (pileup to Variant Calling Format (VCF) 
 st.markdown("Upload :red[BCF] to :green[VCF]")
