@@ -22,8 +22,9 @@ if uploaded_file is not None:
         HBB_vcf = bcftools.call(uploaded_file.name,"-o", "Galaxy117-[HBB_Gene].vcf", "-c")
         st.write(HBB_vcf)
         f.write(HBB_vcf)
-        
-st.download_button(
-    label="Download vcf",
-    data = txt,
-    file_name="Galaxy117-[HBB_Gene]_streamlit.vcf",)
+
+        st.download_button(
+        label="Download vcf",
+        data = HBB_vcf,
+        file_name="Galaxy117-[HBB_Gene]_streamlit.vcf",
+        mime="vcf",)
