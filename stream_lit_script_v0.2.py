@@ -8,7 +8,7 @@ st.write("Please answer quiz question 1")
 st.user_info = "DDD"
 st.text_input("What is soft clipping an alignment file?: " )
 st.header("Variant Calling Pipelining APP")
-st.markdown( "Step 1) Please both upload your BAM, BCF (pileup), or VCF file to the [class github repo] (https://github.com/DDomogala3/NGS_Developers_Track/) and upload the file and press the download button." )
+st.markdown( "<b>Step 1)</b> Please both upload your BAM, BCF (pileup), or VCF file to the [class github repo] (https://github.com/DDomogala3/NGS_Developers_Track/) and upload the file and press the download button." )
 st.markdown( "Step 2 Download output to your computer after analysis  finishes.")
 uploaded_file = st.file_uploader("Please upload BCF file: ")
 #uploaded_file = .join uploaded_file
