@@ -17,6 +17,12 @@ def generate_vcf(input,output):
         vcf = bcftools.call(input,"-o", output, "-c")
         st.write(vcf)
         f.write(vcf)
+        generate_vcf(uploaded_file.name,output)
+    st.download_button(
+    label="Download vcf",
+    data = vcf,
+    file_name="output",
+    mime="vcf",)
     return vcf
 
 # Go from BCF (pileup to Variant Calling Format (VCF) 
@@ -39,9 +45,9 @@ if uploaded_file is not None:
  #       st.write(vcf)
  #       f.write(vcf)
     generate_vcf(uploaded_file.name,output)
-    st.download_button(
-    label="Download vcf",
-    data = vcf,
-    file_name="output",
-    mime="vcf",)
+ #   st.download_button(
+  #  label="Download vcf",
+   # data = vcf,
+   ## file_name="output",
+    #mime="vcf",)
 #generate_vcf(uploaded_file.name,output)
