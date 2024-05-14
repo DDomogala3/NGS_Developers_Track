@@ -31,14 +31,14 @@ if uploaded_file is not None:
     #Pyview = pysam.view(uploaded_file.name,region)
     #print(Pyview)
     #st.write(Pyview)
-output = st.text_input("Please name your output vcf file: ")
+    output = st.text_input("Please name your output vcf file: ")
 #def generate_vcf(input,output):
 #    with open("output","w") as f:
 #        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
  #       st.write(vcf)
  #       f.write(vcf)
-generate_vcf(uploaded_file,output)
-st.download_button(
+    generate_vcf(uploaded_file,output)
+    st.download_button(
     label="Download vcf",
     data = vcf,
     file_name="output",
