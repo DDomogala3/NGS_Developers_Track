@@ -4,7 +4,7 @@ import os
 from st_files_connection import FilesConnection
 
 conn = st.connection('gcs',type = FilesConnection)
-COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format = "vcf", ttl = 600)
+COSMIC = conn("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip")
 path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
 st.header("NGS Developer's APP FINAL PROJECT 2024")
 st.subheader("Developed by Dan Domogala and Allison Bellman")
