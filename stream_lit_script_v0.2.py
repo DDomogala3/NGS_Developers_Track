@@ -38,7 +38,7 @@ output = st.text_input("Please name your output vcf file: ")
  #       st.write(vcf)
  #       f.write(vcf)
 
-        st.download_button(
+    st.download_button(
         label="Download vcf",
         data = vcf,
         file_name="output",
