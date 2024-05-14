@@ -37,10 +37,10 @@ output = st.text_input("Please name your output vcf file: ")
 #        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
  #       st.write(vcf)
  #       f.write(vcf)
-
-    st.download_button(
-        label="Download vcf",
-        data = vcf,
-        file_name="output",
-        mime="vcf",)
-       generate_vcf(uploaded_file,output)
+generate_vcf(uploaded_file,output)
+st.download_button(
+    label="Download vcf",
+    data = vcf,
+    file_name="output",
+    mime="vcf",)
+#generate_vcf(uploaded_file,output)
