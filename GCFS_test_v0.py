@@ -4,5 +4,5 @@ import os
 from st_files_connection import FilesConnection
 import gcsfs
 
-fs = gcfs.GCSFileSystem(project="ddd-wgs")
+fs = gcsfs.GCSFileSystem(project="ddd-wgs")
 fs.ls("ngsappbucket")
