@@ -30,15 +30,18 @@ def generate_vcf(input,output):
         st.write(vcf)
         f.write(vcf)
         fs = gcsfs.GCSFileSystem(project='ddd-wgs')
-    with fs.open("ngsappbucket/output.vcf","wb") as f:
-        for i in vcf:
-            f.write(i)
+   # with fs.open("ngsappbucket/output.vcf","wb") as f:
+   #     for i in vcf:
+      #      f.write(i)
      
     st.download_button(
     label="Download vcf",
     data = vcf,
     file_name=output,
     mime="vcf",)
+    with fs.open("ngsappbucket/output.vcf","wb") as f:
+        for i in vcf:
+            f.write(i)
     return vcf
 
 # Go from BCF (pileup to Variant Calling Format (VCF) 
