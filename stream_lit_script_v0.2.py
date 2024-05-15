@@ -3,7 +3,7 @@ from pysam import bcftools
 import os
 from st_files_connection import FilesConnection
 import pandas as pd
-COSMIC = conn.read("Downloads/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format=None,ttl=None)
+COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format=None,ttl=None)
 conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
 #TEST_FS = conn.fs()
