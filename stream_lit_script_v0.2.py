@@ -39,6 +39,10 @@ def generate_vcf(input,output_vcf):
         data = vcf,
         file_name=output_vcf,
         mime="vcf",)
+        #path = "ngsappbucket/output_vcf"
+        with fs.open("ngsappbucket/output_vcf","wb") as f:
+        for i in vcf:
+            f.write(i)
     return vcf
     
 def cloud_pipeline_vcf(input):
@@ -72,5 +76,5 @@ if uploaded_file is not None:
     output = st.text_input("Please name your output vcf file: ")
 
     generate_vcf(uploaded_file.name,output)
-    cloud_pipeline(output_vcf)
+  #  cloud_pipeline(output_vcf)
 
