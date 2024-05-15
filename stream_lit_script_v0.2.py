@@ -24,9 +24,9 @@ st.markdown( "**Step 1)** Please both upload your BAM, BCF (pileup), or VCF file
 st.markdown( "**Step 2)** Download output to your computer after analysis  finishes.")
 
 
-def generate_vcf(input,output):
-    with open(output,"w") as f:
-        vcf = bcftools.call(input,"-o", output, "-c")
+def generate_vcf(input,output_vcf):
+    with open(output_vcf,"w") as f:
+        vcf = bcftools.call(input,"-o", output_vcf, "-c")
         st.write(vcf)
         f.write(vcf)
         fs = gcsfs.GCSFileSystem(project='ddd-wgs')
@@ -37,9 +37,9 @@ def generate_vcf(input,output):
     st.download_button(
     label="Download vcf",
     data = vcf,
-    file_name=output,
+    file_name=output_vcf,
     mime="vcf",)
-    return vcf
+    return output_vcf
 def cloud_pipeline_vcf(input):
     #ile_type = str()
     path = "ngsappbucket/output_vcf"
@@ -71,5 +71,5 @@ if uploaded_file is not None:
     output = st.text_input("Please name your output vcf file: ")
 
     generate_vcf(uploaded_file.name,output)
-    cloud_pipeline(vcf)
+    cloud_pipeline(output_vcf)
 
