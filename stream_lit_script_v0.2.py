@@ -13,7 +13,7 @@ COSMIC_Index = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_
 #TEST_READ = conn.read("ngsappbucket/bio_info_data_set.csv", input_format="csv", ttl = 600)
 TEST_READ = conn.open("ngsappbucket/bio_info_data_set.csv", mode = "rb")
 st.write(TEST_READ)
-path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
+#path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
 st.header("NGS Developer's APP FINAL PROJECT 2024")
 st.subheader("Developed by Dan Domogala and Allison Bellman")
 st.write("Please answer quiz question 1")
