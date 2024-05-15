@@ -29,6 +29,10 @@ def generate_vcf(input,output):
         vcf = bcftools.call(input,"-o", output, "-c")
         st.write(vcf)
         f.write(vcf)
+        fs = gcsfs.GCSFileSystem(project='ddd-wgs')
+    with fs.open("ngsappbucket/output.vcf","wb") as f:
+        for i in output:
+            f.write(i)
      
     st.download_button(
     label="Download vcf",
@@ -59,15 +63,6 @@ if uploaded_file is not None:
     #print(Pyview)
     #st.write(Pyview)
     output = st.text_input("Please name your output vcf file: ")
-#def generate_vcf(input,output):
-#    with open("output","w") as f:
-#        vcf = bcftools.call(uploaded_file.name,"-o", "input", "-c")
- #       st.write(vcf)
- #       f.write(vcf)
+
     generate_vcf(uploaded_file.name,output)
- #   st.download_button(
-  #  label="Download vcf",
-   # data = vcf,
-   ## file_name="output",
-    #mime="vcf",)
-#generate_vcf(uploaded_file.name,output)
+
