@@ -2,7 +2,7 @@ import streamlit as st
 from pysam import bcftools
 import os
 from st_files_connection import FilesConnection
-conn = st.connection('local', type = FileConnection)
+conn = st.connection('local', type = FilesConnection)
 COSMIC = conn.read("Downloads/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip", input_format = "None")
 #conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
