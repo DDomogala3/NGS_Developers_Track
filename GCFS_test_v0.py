@@ -5,4 +5,6 @@ from st_files_connection import FilesConnection
 import gcsfs
 
 fs = gcsfs.GCSFileSystem(project="ddd-wgs")
-fs.ls("ngsappbucket")
+contents = fs.ls("ngsappbucket")
+st.write(contents)
+
