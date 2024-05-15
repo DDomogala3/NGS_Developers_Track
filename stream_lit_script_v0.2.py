@@ -31,7 +31,7 @@ def generate_vcf(input,output):
         f.write(vcf)
         fs = gcsfs.GCSFileSystem(project='ddd-wgs')
     with fs.open("ngsappbucket/output.vcf","wb") as f:
-        for i in output:
+        for i in vcf:
             f.write(i)
      
     st.download_button(
