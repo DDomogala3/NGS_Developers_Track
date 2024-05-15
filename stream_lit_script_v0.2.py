@@ -4,15 +4,15 @@ import os
 from st_files_connection import FilesConnection
 import pandas as pd
 import gcsfs
-conn = st.connection('gcs',type = FilesConnection)
+#conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format="txt",ttl=600)
 #conn = st.connection('gcs',type = FilesConnection)
-COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
-COSMIC_Index = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].tbi",mode = "rb")
+#COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
+#COSMIC_Index = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].tbi",mode = "rb")
 #TEST_FS = conn.fs()
 #TEST_READ = conn.read("ngsappbucket/bio_info_data_set.csv", input_format="csv", ttl = 600)
-TEST_READ = conn.open("ngsappbucket/bio_info_data_set.csv", mode = "rb")
-st.write(TEST_READ)
+#TEST_READ = conn.open("ngsappbucket/bio_info_data_set.csv", mode = "rb")
+#st.write(TEST_READ)
 #path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
 st.header("NGS Developer's APP FINAL PROJECT 2024")
 st.subheader("Developed by Dan Domogala and Allison Bellman")
@@ -42,7 +42,7 @@ def generate_vcf(input,output_vcf):
         #path = "ngsappbucket/output_vcf"
     with fs.open("ngsappbucket/output_vcf","wb") as f:
         for i in output_vcf:
-            f.write(i)
+            f.read(i)
     return vcf
     
 def cloud_pipeline_vcf(input):
