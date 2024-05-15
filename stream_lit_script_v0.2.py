@@ -4,7 +4,7 @@ import os
 from st_files_connection import FilesConnection
 import pandas as pd
 conn = st.connection('gcs',type = FilesConnection)
-COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format="None",ttl=600)
+COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format=None,ttl=600)
 #conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
 #TEST_FS = conn.fs()
