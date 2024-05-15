@@ -39,9 +39,6 @@ def generate_vcf(input,output):
     data = vcf,
     file_name=output,
     mime="vcf",)
-    with fs.open("ngsappbucket/output.vcf","wb") as f:
-        for i in vcf:
-            f.write(i)
     return vcf
 
 # Go from BCF (pileup to Variant Calling Format (VCF) 
