@@ -40,7 +40,13 @@ def generate_vcf(input,output):
     file_name=output,
     mime="vcf",)
     return vcf
-
+def cloud_pipeline(file_type,input):
+    file_type = str()
+    path = ""ngsappbucket/" + file_type
+    with fs.open(path,"wb") as f:
+        for i in input:
+            f.write(i)
+    
 # Go from BCF (pileup to Variant Calling Format (VCF) 
 st.markdown("Upload :red[BCF] to :green[VCF]")
 uploaded_file = st.file_uploader("Please upload BCF file: ")
@@ -65,4 +71,5 @@ if uploaded_file is not None:
     output = st.text_input("Please name your output vcf file: ")
 
     generate_vcf(uploaded_file.name,output)
+    cloud_pipeline(output_vcf,vcf)
 
