@@ -3,6 +3,7 @@ from pysam import bcftools
 import os
 from st_files_connection import FilesConnection
 import pandas as pd
+import gcsfs
 conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format="txt",ttl=600)
 #conn = st.connection('gcs',type = FilesConnection)
@@ -39,13 +40,16 @@ def generate_vcf(input,output):
 # Go from BCF (pileup to Variant Calling Format (VCF) 
 st.markdown("Upload :red[BCF] to :green[VCF]")
 uploaded_file = st.file_uploader("Please upload BCF file: ")
-conn.write("ngsappbucket/",uploaded_file)
+
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data)
-
+    fs = gcsfs.GCSFileSystem(project='ddd-wgs')
+    with fs.open("ngsappbucket/uploaded_file","wb") as f:
+        f.write(uploaded_file)
+    fs.du("ngsappbucket/uploaded_file")
     #region = '11:524657,5246555'
     #Pyview = pysam.view(uploaded_file.name,region)
     #print(Pyview)
