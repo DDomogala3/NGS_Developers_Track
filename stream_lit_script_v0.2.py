@@ -41,8 +41,8 @@ def generate_vcf(input,output_vcf):
         mime="vcf",)
         #path = "ngsappbucket/output_vcf"
         with fs.open("ngsappbucket/output_vcf","wb") as f:
-        for i in vcf:
-            f.write(i)
+            for i in vcf:
+                f.write(i)
     return vcf
     
 def cloud_pipeline_vcf(input):
