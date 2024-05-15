@@ -39,7 +39,7 @@ def generate_vcf(input,output_vcf):
         data = vcf,
         file_name=output_vcf,
         mime="vcf",)
-        return output_vcf
+    return output_vcf
     
 def cloud_pipeline_vcf(input):
     file_type = str()
