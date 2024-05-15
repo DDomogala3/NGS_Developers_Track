@@ -39,6 +39,7 @@ def generate_vcf(input,output):
 # Go from BCF (pileup to Variant Calling Format (VCF) 
 st.markdown("Upload :red[BCF] to :green[VCF]")
 uploaded_file = st.file_uploader("Please upload BCF file: ")
+conn.write("ngsappbucket/",uploaded_file)
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
     # To read file as bytes:
