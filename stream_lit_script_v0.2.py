@@ -49,7 +49,7 @@ if uploaded_file is not None:
     fs = gcsfs.GCSFileSystem(project='ddd-wgs')
    # with fs.open("ngsappbucket/uploaded_file","wb") as f:
     #    f.write(uploaded_file)
-    target = fs.url(https://github.com/DDomogala3/NGS_Developers_Track/) + uploaded_file.name
+    target = fs.url("https://github.com/DDomogala3/NGS_Developers_Track/") + uploaded_file.name
     
     fs.put_file(target,"ngsappbucket/")
     fs.du("ngsappbucket/uploaded_file")
