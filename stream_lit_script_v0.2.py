@@ -49,7 +49,7 @@ if uploaded_file is not None:
     fs = gcsfs.GCSFileSystem(project='ddd-wgs')
    # with fs.open("ngsappbucket/uploaded_file","wb") as f:
     #    f.write(uploaded_file)
-    fs.put_file(uploaded_file,"ngsappbucket/")
+    fs.put_file(uploaded_file.name,"ngsappbucket/")
     fs.du("ngsappbucket/uploaded_file")
     #region = '11:524657,5246555'
     #Pyview = pysam.view(uploaded_file.name,region)
