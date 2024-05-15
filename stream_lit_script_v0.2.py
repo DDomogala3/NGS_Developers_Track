@@ -42,7 +42,7 @@ def generate_vcf(input,output):
     return vcf
 def cloud_pipeline(file_type,input):
     file_type = str()
-    path = ""ngsappbucket/" + file_type
+    path = "ngsappbucket/" + file_type
     with fs.open(path,"wb") as f:
         for i in input:
             f.write(i)
