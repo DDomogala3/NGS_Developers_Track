@@ -2,12 +2,12 @@ import streamlit as st
 from pysam import bcftools
 import os
 from st_files_connection import FilesConnection
-conn = st.experimental_connection('local', type = FilesConnection)
+
 #COSMIC = conn.read("Downloads/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format='parquet',ttl=None)
-#conn = st.connection('gcs',type = FilesConnection)
+conn = st.connection('gcs',type = FilesConnection)
 COSMIC = conn.open("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",mode = "rb")
 #TEST_FS = conn.fs()
-#TEST_READ = conn.read("ngsappbucket/bio_info_data_set.csv", input_format = "csv")
+TEST_READ = conn.read("ngsappbucket/bio_info_data_set.csv", input_format="csv", ttl = 600)
 #TEST_READ = conn.open("ngsappbucket/bio_info_data_set.csv", mode = "rb")
 path_file = os.path.dirname("/Users/danieldomogala/Documents/Personal/Codeacademy_notebooks/")
 st.header("NGS Developer's APP FINAL PROJECT 2024")
