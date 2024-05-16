@@ -4,6 +4,8 @@ import os
 from st_files_connection import FilesConnection
 import pandas as pd
 import gcsfs
+from random import choice
+number = choice(range(0,10000000000))
 #conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format="txt",ttl=600)
 #conn = st.connection('gcs',type = FilesConnection)
@@ -66,7 +68,7 @@ if uploaded_file is not None:
         for i in uploaded_file:
             f.write(i)
             #f.close()
-    output = st.text_input("Please name your output vcf file: ")    
+    output = st.text_input("Please name your output vcf file: ", key = number)    
    # input_bam = fs.pipe("ngsappbucket/uploaded_file")
    # generate_vcf(input_bam,output)
     
