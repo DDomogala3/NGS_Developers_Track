@@ -31,8 +31,8 @@ def generate_vcf(input,output_vcf):
    
    # with open(output_vcf,"w") as f:
    
-   st.write(bcftools.call(bcf_in,"-o", output_vcf, "-c"))
-   vcf = bcftools.call(bcf_in,"-o", output_vcf, "-c")
+   st.write(bcftools.call(input,"-o", output_vcf, "-c"))
+   vcf = bcftools.call(input,"-o", output_vcf, "-c")
         #st.write(vcf)
     #for i in vcf:
      #       f.write(i)
@@ -79,8 +79,8 @@ if uploaded_file is not None:
          f.write(i)
             #f.close()
     #output = st.text_input("Please name your output vcf file: ", key = number)    
-   # input_bam = fs.pipe("ngsappbucket/uploaded_file")
-   # generate_vcf(input_bam,output)
+
+
     
     
    fs.du("ngsappbucket/uploaded_file")
@@ -107,5 +107,5 @@ if uploaded_file is not None:
         #st.write(google_bam)
         
        # generate_vcf(google_bam,output)
-  #  cloud_pipeline(output_vcf)
+
 
