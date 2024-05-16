@@ -85,7 +85,7 @@ if uploaded_file is not None:
     #fs.cat("ngsappbucket/uploaded_file") > "uploaded.bcf"
           
     #bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
-    with fs.open("ngsappbucket/uploaded_file","rb") as f:
+    with fs.open("ngsappbucket/uploaded_file","wb") as f:
        bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
       
     #generate_vcf("bcf_out.bcf",output)
