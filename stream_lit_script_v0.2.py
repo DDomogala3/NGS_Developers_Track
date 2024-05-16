@@ -30,7 +30,7 @@ st.markdown( "**Step 2)** Download output to your computer after analysis  finis
 def generate_vcf(input,output_vcf):
    
    # with open(output_vcf,"w") as f:
-   bcf_in = VariantFile(input)
+   
    st.write(bcftools.call(bcf_in,"-o", output_vcf, "-c"))
    vcf = bcftools.call(bcf_in,"-o", output_vcf, "-c")
         #st.write(vcf)
@@ -83,6 +83,7 @@ if uploaded_file is not None:
   
     output = st.text_input("Please name your output vcf file: ")
     bcf = fs.cat("ngsappbucket/uploaded_file")
+    bcf_in = VariantFile(bcf)
     generate_vcf(bcf,output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
         google_bam = "google.bcf"
