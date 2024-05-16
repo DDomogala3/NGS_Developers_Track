@@ -77,7 +77,7 @@ if uploaded_file is not None:
   
     output = st.text_input("Please name your output vcf file: ")
     downloaded_bam = fs.download("ngsappbucket/uploaded_file","")
-    generate_vcf(downloaded_bam.name,output)
+    generate_vcf(downloaded_bam,output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
         st.write(google_bam)
        # generate_vcf(google_bam,output)
