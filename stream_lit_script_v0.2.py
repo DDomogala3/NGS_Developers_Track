@@ -79,7 +79,7 @@ if uploaded_file is not None:
     downloaded_bam = fs.download("ngsappbucket/uploaded_file","")
     #generate_vcf(downloaded_bam,output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
-        "google_bcf" = google_bam
+        google_bam = "google.bcf"
         with open("uploaded_file.bcf", "wb") as f:
             for i in "google_bam":
                 f.write(i)
