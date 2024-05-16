@@ -73,6 +73,6 @@ if uploaded_file is not None:
   
     output = st.text_input("Please name your output vcf file: ")
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
-        generate_vcf(google_bam,output)
+        generate_vcf(google_bam.name,output)
   #  cloud_pipeline(output_vcf)
 
