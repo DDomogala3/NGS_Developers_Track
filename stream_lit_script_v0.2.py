@@ -76,7 +76,7 @@ if uploaded_file is not None:
     fs.du("ngsappbucket/uploaded_file")
   
     output = st.text_input("Please name your output vcf file: ")
-    downloaded_bam = fs.download("ngsappbucket/uploaded_file","/mount/src/ngs_developers_track/")
+    downloaded_bam = fs.download("ngsappbucket/","/mount/src/ngs_developers_track/")
     for i in downloaded_bam:
         st.write(i)
      #   generate_vcf(i,output)
