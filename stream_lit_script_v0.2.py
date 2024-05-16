@@ -73,7 +73,7 @@ if uploaded_file is not None:
    bytes_data = uploaded_file.getvalue()
    st.write(bytes_data)
     
-    fs = gcsfs.GCSFileSystem(project='ddd-wgs')
+   fs = gcsfs.GCSFileSystem(project='ddd-wgs')
    with fs.open("ngsappbucket/uploaded_file","wb") as f:
       for i in uploaded_file:
          f.write(i)
