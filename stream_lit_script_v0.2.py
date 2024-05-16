@@ -66,9 +66,8 @@ uploaded_file = st.file_uploader("Please upload BCF file: ")
 
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
-   
    output = st.text_input("Please name your output vcf file: ")
-   generate_vcf(uploaded_file.name,output)
+ #  generate_vcf(uploaded_file.name,output)
     # To read file as bytes:
    bytes_data = uploaded_file.getvalue()
    st.write(bytes_data)
@@ -77,6 +76,7 @@ if uploaded_file is not None:
    with fs.open("ngsappbucket/uploaded_file","wb") as f:
       for i in uploaded_file:
          f.write(i)
+         generate_vcf(f,output)
             #f.close()
     #output = st.text_input("Please name your output vcf file: ", key = number)    
 
