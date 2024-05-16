@@ -9,5 +9,4 @@ contents = fs.ls("ngsappbucket")
 st.write(contents)
 
 with fs.open("ngsappbucket/uploaded_file", "rb") as bam_file:
-  for i in bam_file:
-    fs.read_bytes(i)
+  fs.read_bytes(bam_file)
