@@ -82,7 +82,7 @@ if uploaded_file is not None:
         with open("uploaded_file.bcf", "wb") as f:
             for i in google_bam:
                 f.write(i)
-                generate_vcf(f,output)
+                generate_vcf(f.name,output)
         #for i in google_bam:
          #   st.write(i)
         
