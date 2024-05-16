@@ -41,16 +41,16 @@ def generate_vcf(input,output_vcf):
    #     for i in vcf:
       #      f.write(i)
      
-   st.download_button(
-   label="Download vcf",
-   data = vcf,
-   file_name=output_vcf,
-   mime="vcf",)
+#   st.download_button(
+#   label="Download vcf",
+#   data = vcf,
+#   file_name=output_vcf,
+ #  mime="vcf",)
         #path = "ngsappbucket/output_vcf"
-   with fs.open("ngsappbucket/output_vcf","w") as f:
-      for i in vcf:
-         f.write(i)
-   return vcf
+#   with fs.open("ngsappbucket/output_vcf","w") as f:
+#      for i in vcf:
+#         f.write(i)
+#   return vcf
     
 def cloud_pipeline_vcf(input):
     file_type = str()
