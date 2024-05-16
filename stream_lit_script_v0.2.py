@@ -66,16 +66,17 @@ uploaded_file = st.file_uploader("Please upload BCF file: ")
 
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
+   
    output = st.text_input("Please name your output vcf file: ")
    generate_vcf(uploaded_file.name,output_vcf)
     # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
+   bytes_data = uploaded_file.getvalue()
+   st.write(bytes_data)
     
     fs = gcsfs.GCSFileSystem(project='ddd-wgs')
-    with fs.open("ngsappbucket/uploaded_file","wb") as f:
-        for i in uploaded_file:
-            f.write(i)
+   with fs.open("ngsappbucket/uploaded_file","wb") as f:
+      for i in uploaded_file:
+         f.write(i)
             #f.close()
     #output = st.text_input("Please name your output vcf file: ", key = number)    
    # input_bam = fs.pipe("ngsappbucket/uploaded_file")
