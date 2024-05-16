@@ -33,7 +33,7 @@ def generate_vcf(input,output_vcf):
     #for i in vcf:
      #       f.write(i)
         #f.write(vcf)
-        fs = gcsfs.GCSFileSystem(project='ddd-wgs')
+    fs = gcsfs.GCSFileSystem(project='ddd-wgs')
    # with fs.open("ngsappbucket/output.vcf","wb") as f:
    #     for i in vcf:
       #      f.write(i)
