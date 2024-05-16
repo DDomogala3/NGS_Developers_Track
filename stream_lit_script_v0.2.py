@@ -30,7 +30,7 @@ def generate_vcf(input,output_vcf):
    
    # with open(output_vcf,"w") as f:
    input = bcf
-   st.write(bcftools.call(bcf,"-o", output_vcf, "-c")
+   st.write(bcftools.call(bcf,"-o", output_vcf, "-c"))
    vcf = bcftools.call(bcf,"-o", output_vcf, "-c")
         #st.write(vcf)
     #for i in vcf:
