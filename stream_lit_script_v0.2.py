@@ -65,7 +65,7 @@ if uploaded_file is not None:
     with fs.open("ngsappbucket/uploaded_file","wb") as f:
         for i in uploaded_file:
             f.write(i)
-            f.close()
+            #f.close()
     output = st.text_input("Please name your output vcf file: ")    
     generate_vcf("ngsappbucket/uploaded_file",output)
     
