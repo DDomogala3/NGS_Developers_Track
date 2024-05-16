@@ -8,5 +8,6 @@ fs = gcsfs.GCSFileSystem(project="ddd-wgs")
 contents = fs.ls("ngsappbucket")
 st.write(contents)
 
-with fs.read_bytes("ngsappbucket/uploaded_file") as bam_file:
-  st.write(bam_file)
+with fs.open("ngsappbucket/uploaded_file", "rb") as bam_file:
+  for i in bam_file:
+    fs.read_bytes(i)
