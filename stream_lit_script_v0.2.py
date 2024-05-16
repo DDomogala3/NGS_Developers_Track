@@ -82,7 +82,7 @@ if uploaded_file is not None:
     fs.du("ngsappbucket/uploaded_file")
   
     output = st.text_input("Please name your output vcf file: ")
-    with open("uploaded.bcf","w") as f:
+    with open("uploaded.bcf","wb") as f:
        for i in fs.cat("ngsappbucket/uploaded_file"):
           f.write(i)
     bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
