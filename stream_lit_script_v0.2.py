@@ -27,22 +27,22 @@ st.markdown( "**Step 2)** Download output to your computer after analysis  finis
 
 
 def generate_vcf(input,output_vcf):
-    with open(output_vcf,"w") as f:
-        vcf = bcftools.call(input,"-o", output_vcf, "-c")
+   # with open(output_vcf,"w") as f:
+    vcf = bcftools.call(input,"-o", output_vcf, "-c")
         #st.write(vcf)
-        for i in vcf:
-            f.write(i)
+    #for i in vcf:
+     #       f.write(i)
         #f.write(vcf)
         fs = gcsfs.GCSFileSystem(project='ddd-wgs')
    # with fs.open("ngsappbucket/output.vcf","wb") as f:
    #     for i in vcf:
       #      f.write(i)
      
-        st.download_button(
-        label="Download vcf",
-        data = vcf,
-        file_name=output_vcf,
-        mime="vcf",)
+    st.download_button(
+    label="Download vcf",
+    data = vcf,
+    file_name=output_vcf,
+    mime="vcf",)
         #path = "ngsappbucket/output_vcf"
     with fs.open("ngsappbucket/output_vcf","w") as f:
         for i in vcf:
