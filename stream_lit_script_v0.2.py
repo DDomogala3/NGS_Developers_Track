@@ -79,7 +79,11 @@ if uploaded_file is not None:
     downloaded_bam = fs.download("ngsappbucket/uploaded_file","")
     generate_vcf(downloaded_bam,output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
+        for i in google_bam:
+            st.write(i)
+        
         st.write(google_bam)
+        
        # generate_vcf(google_bam,output)
   #  cloud_pipeline(output_vcf)
 
