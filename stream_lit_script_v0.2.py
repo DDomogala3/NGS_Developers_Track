@@ -68,7 +68,7 @@ uploaded_file = st.file_uploader("Please upload BCF file: ")
 if uploaded_file is not None:
    
    output = st.text_input("Please name your output vcf file: ")
-   generate_vcf(uploaded_file.name,output_vcf)
+   generate_vcf(uploaded_file.name,output)
     # To read file as bytes:
    bytes_data = uploaded_file.getvalue()
    st.write(bytes_data)
