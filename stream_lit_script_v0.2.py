@@ -41,7 +41,7 @@ def generate_vcf(input,output_vcf):
         mime="vcf",)
         #path = "ngsappbucket/output_vcf"
     with fs.open("ngsappbucket/output_vcf","w") as f:
-        for i in output_vcf:
+        for i in vcf:
             f.write(i)
     return vcf
     
