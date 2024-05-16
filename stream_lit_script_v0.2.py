@@ -83,7 +83,7 @@ if uploaded_file is not None:
    # generate_vcf(input_bam,output)
     
     
-    fs.du("ngsappbucket/uploaded_file")
+   fs.du("ngsappbucket/uploaded_file")
   
    # output = st.text_input("Please name your output vcf file: ")
     #fs.cat("ngsappbucket/uploaded_file") > "uploaded.bcf"
