@@ -5,6 +5,7 @@ from st_files_connection import FilesConnection
 import pandas as pd
 import gcsfs
 from random import choice
+from pysam import VariantFile
 number = choice(range(0,10000000000))
 #conn = st.connection('gcs',type = FilesConnection)
 #COSMIC = conn.read("ngsappbucket/Galaxy73-[Cosmic_GenomeScreensMutant_v99_GRCh37.vcf.gz].vcf_bgzip",input_format="txt",ttl=600)
@@ -29,9 +30,9 @@ st.markdown( "**Step 2)** Download output to your computer after analysis  finis
 def generate_vcf(input,output_vcf):
    
    # with open(output_vcf,"w") as f:
-   input = bcf
-   st.write(bcftools.call(bcf,"-o", output_vcf, "-c"))
-   vcf = bcftools.call(bcf,"-o", output_vcf, "-c")
+   bcf_in = VariantFile(input)
+   st.write(bcftools.call(bcf_in,"-o", output_vcf, "-c"))
+   vcf = bcftools.call(bcf_in,"-o", output_vcf, "-c")
         #st.write(vcf)
     #for i in vcf:
      #       f.write(i)
