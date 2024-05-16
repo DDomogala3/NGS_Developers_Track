@@ -66,9 +66,12 @@ uploaded_file = st.file_uploader("Please upload BCF file: ")
 
 #uploaded_file = .join uploaded_file
 if uploaded_file is not None:
+   output = st.text_input("Please name your output vcf file: ")
+   generate_vcf(uploaded_file.name,output_vcf)
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data)
+    
     fs = gcsfs.GCSFileSystem(project='ddd-wgs')
     with fs.open("ngsappbucket/uploaded_file","wb") as f:
         for i in uploaded_file:
@@ -81,16 +84,16 @@ if uploaded_file is not None:
     
     fs.du("ngsappbucket/uploaded_file")
   
-    output = st.text_input("Please name your output vcf file: ")
+   # output = st.text_input("Please name your output vcf file: ")
     #fs.cat("ngsappbucket/uploaded_file") > "uploaded.bcf"
           
     #bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
-    with fs.open("ngsappbucket/uploaded_file","rb") as "f":
-       bcftools.view("f","-o","bcf_out.bcf")
+   # with fs.open("ngsappbucket/uploaded_file","rb") as f:
+     #  bcftools.view("f","-o","bcf_out.bcf")
       
     #generate_vcf("bcf_out.bcf",output)
-    with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
-        google_bam = "google.bcf"
+   # with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
+     #   google_bam = "google.bcf"
        # generate_vcf("google.bcf",output)
       #  with open("uploaded_file.bcf", "wb") as f:
             #for i in "google_bam":
