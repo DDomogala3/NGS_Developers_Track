@@ -84,7 +84,7 @@ if uploaded_file is not None:
     output = st.text_input("Please name your output vcf file: ")
     with open("uploaded.bcf","w") as f:
        for i in fs.cat("ngsappbucket/uploaded_file"):
-          f.write(str(i))
+          st.write(i)
     bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
     #generate_vcf("bcf_out.bcf",output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
