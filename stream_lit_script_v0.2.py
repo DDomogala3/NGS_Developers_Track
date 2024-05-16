@@ -76,7 +76,7 @@ if uploaded_file is not None:
     fs.du("ngsappbucket/uploaded_file")
   
     output = st.text_input("Please name your output vcf file: ")
-    bcf = fs.write_bytes("ngsappbucket/uploaded_file")
+    bcf = fs.get_file("ngsappbucket/uploaded_file","/mount/src/ngs_developers_track/")
     generate_vcf(bcf,output)
     with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
         google_bam = "google.bcf"
