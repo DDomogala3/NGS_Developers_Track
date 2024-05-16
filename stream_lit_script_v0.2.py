@@ -65,15 +65,13 @@ if uploaded_file is not None:
     with fs.open("ngsappbucket/uploaded_file","wb") as f:
         for i in uploaded_file:
             f.write(i)
-    target = fs.url("Downloads/") + uploaded_file.name
+        output = st.text_input("Please name your output vcf file: ")    
+        generate_vcf(f,output)
     
-    #fs.put_file(target,"ngsappbucket/")
+    
     fs.du("ngsappbucket/uploaded_file")
-    #region = '11:524657,5246555'
-    #Pyview = pysam.view(uploaded_file.name,region)
-    #print(Pyview)
-    #st.write(Pyview)
-    output = st.text_input("Please name your output vcf file: ")
+  
+   # output = st.text_input("Please name your output vcf file: ")
 
     generate_vcf(uploaded_file.name,output)
   #  cloud_pipeline(output_vcf)
