@@ -71,7 +71,7 @@ if uploaded_file is not None:
    with fs.open("ngsappbucket/output.vcf","r") as f:
       st.download_button(
          label="Download vcf",
-         data = f,
+         data = output,
          file_name=f,
          mime="vcf",)
   
