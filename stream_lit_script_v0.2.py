@@ -68,15 +68,15 @@ if uploaded_file is not None:
     
    fs.du("ngsappbucket/uploaded_file")
 
-      with fs.open("ngsappbucket/output.vcf","wb") as f:
+   with fs.open("ngsappbucket/output.vcf","wb") as f:
             for i in f:
                f.write(i)
      
-      st.download_button(
-      label="Download vcf",
-      data = f,
-      file_name=output_vcf,
-      mime="vcf",)
+   st.download_button(
+   label="Download vcf",
+   data = f,
+   file_name=output_vcf,
+   mime="vcf",)
   
    
         
