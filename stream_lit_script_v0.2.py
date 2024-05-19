@@ -75,7 +75,7 @@ if uploaded_file is not None:
    st.download_button(
    label="Download vcf",
    data = f,
-   file_name=output_vcf,
+   file_name=output,
    mime="vcf",)
   
    
