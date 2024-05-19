@@ -68,7 +68,7 @@ if uploaded_file is not None:
     
    fs.du("ngsappbucket/uploaded_file")
 
-   with fs.open("ngsappbucket/output.vcf","wb") as f:
+   with fs.open("ngsappbucket/output.vcf","rb") as f:
             for i in f:
                f.write(i)
      
