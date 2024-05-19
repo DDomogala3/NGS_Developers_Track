@@ -68,11 +68,11 @@ if uploaded_file is not None:
     
    fs.du("ngsappbucket/uploaded_file")
 
-   with fs.open("ngsappbucket/output.vcf","r") as f:
+   with fs.open("ngsappbucket/output.vcf","rb") as f:
       st.download_button(
          label="Download vcf",
          data = f,
-         file_name=output,
+         file_name=f,
          mime="vcf",)
   
    
