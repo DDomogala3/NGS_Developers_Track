@@ -33,25 +33,7 @@ def generate_vcf(input,output_vcf):
    
    st.write(bcftools.call(input,"-o", output_vcf, "-c"))
    vcf = bcftools.call(input,"-o", output_vcf, "-c")
-        #st.write(vcf)
-    #for i in vcf:
-     #       f.write(i)
-        #f.write(vcf)
-   fs = gcsfs.GCSFileSystem(project='ddd-wgs')
-   # with fs.open("ngsappbucket/output.vcf","wb") as f:
-   #     for i in vcf:
-      #      f.write(i)
-     
-#   st.download_button(
-#   label="Download vcf",
-#   data = vcf,
-#   file_name=output_vcf,
- #  mime="vcf",)
-        #path = "ngsappbucket/output_vcf"
-#   with fs.open("ngsappbucket/output_vcf","w") as f:
-#      for i in vcf:
-#         f.write(i)
-#   return vcf
+   
     
 def cloud_pipeline_vcf(input):
     file_type = str()
@@ -86,37 +68,18 @@ if uploaded_file is not None:
     
    fs.du("ngsappbucket/uploaded_file")
 
-   with fs.open("ngsappbucket/output.vcf","wb") as f:
-        for i in f:
-           f.write(i)
+      with fs.open("ngsappbucket/output.vcf","wb") as f:
+            for i in f:
+               f.write(i)
      
-   st.download_button(
-   label="Download vcf",
-   data = f,
-   file_name=output_vcf,
-   mime="vcf",)
+      st.download_button(
+      label="Download vcf",
+      data = f,
+      file_name=output_vcf,
+      mime="vcf",)
   
-   # output = st.text_input("Please name your output vcf file: ")
-    #fs.cat("ngsappbucket/uploaded_file") > "uploaded.bcf"
-          
-    #bcftools.view("uploaded.bcf","-o","bcf_out.bcf")
-   # with fs.open("ngsappbucket/uploaded_file","rb") as f:
-     #  bcftools.view("f","-o","bcf_out.bcf")
-      
-    #generate_vcf("bcf_out.bcf",output)
-   # with fs.open("ngsappbucket/uploaded_file","rb") as google_bam:
-     #   google_bam = "google.bcf"
-       # generate_vcf("google.bcf",output)
-      #  with open("uploaded_file.bcf", "wb") as f:
-            #for i in "google_bam":
-                
-            
-               # generate_vcf("f",output)
-        #for i in google_bam:
-         #   st.write(i)
+   
         
-        #st.write(google_bam)
-        
-       # generate_vcf(google_bam,output)
+
 
 
