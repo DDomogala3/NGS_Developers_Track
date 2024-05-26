@@ -52,11 +52,11 @@ def entry():
     vcf_calling(outfile_name,"out_vcf")
     compress_vcf("output.vcf","output.vcf.gz")
     make_tab_vcf("output.vcf.gz","output.vcf.gz.csi")
-    Annotate_VCF("output.vcf.gz","output_annotate.vcf.gz")
+    Annotate_VCF("output.vcf.gz","output_annotate.vcf")
 
 
     dir_name = tk.filedialog.askdirectory()
-    shutil.copy2(outfile_name,dir_name)
+    shutil.copy2("output_annotate.vcf",dir_name)
 
     #dir_name = tk.filedialog.askdirectory()
 
