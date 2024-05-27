@@ -5,7 +5,7 @@ from pysam import bcftools
 
 #regions = "11:524657-5246555"
 #bamfile = "Galaxy117-[HBB_Gene].bam"
-reference = ("/Volumes/Domogala_ext/ddomogalagatk/data/DDD_WGS/chr11.fa")
+#reference = ("/Volumes/Domogala_ext/ddomogalagatk/data/DDD_WGS/chr11.fa")
 #reference = "chr11.fa"
 def m_pileup_calc(bam_file,output_file,reference):
     with open(output_file,"w") as f:
@@ -13,7 +13,8 @@ def m_pileup_calc(bam_file,output_file,reference):
        print(pysam_pileup)
        f.write(pysam_pileup)
     #return pysam_pileup
-
+#def m_pileup_calc_no_region(bam_file,output_file):
+#    with open()
 #m_pileup_calc("Galaxy117-[HBB_Gene].bam","Galaxy117-[HBB_Gene].vcf",regions,reference)
 
 def vcf_calling(input,output):
@@ -22,7 +23,7 @@ def vcf_calling(input,output):
         print(VCF_call)
         f.write(VCF_call)
     #return VCF_call
-m_pileup_calc("Galaxy117-[HBB_Gene].bam","output.bcf",reference)
+#m_pileup_calc("Galaxy117-[HBB_Gene].bam","output.bcf",reference)
 #begin pipeline
 #pipe1_pileup = m_pileup_calc("Galaxy117-[HBB_Gene].bam","Galaxy117-[HBB_Gene].bcf",regions,reference)
 #output_sam file_name
@@ -32,7 +33,7 @@ def samtools_view(input,output):
         print(samtools_view)
         f.write(samtools_view)
 #samtools_view(,"output.vcf")
-vcf_calling("output.bcf","output.vcf")
+#vcf_calling("output.bcf","output.vcf")
 
 def compress_vcf(input,output):
     with open(output,'wb') as f:
@@ -45,8 +46,8 @@ def make_tab_vcf(input,output):
         f.write(bcftools_index)
 
 
-compress_vcf("output.vcf","output.vcf.gz")
-make_tab_vcf("output.vcf.gz","output.vcf.gz.csi")
+#compress_vcf("output.vcf","output.vcf.gz")
+#make_tab_vcf("output.vcf.gz","output.vcf.gz.csi")
 
 def Annotate_VCF(input_vcf,output_vcf):
     #annotation_file = str(annotation_file)
@@ -60,7 +61,7 @@ def Annotate_VCF(input_vcf,output_vcf):
         f.write(Annotation)
 #Annotate_VCF(vcf_name,vcf_output)
 
-Annotate_VCF("output.vcf.gz","output_annotate.vcf.gz")
+#Annotate_VCF("output.vcf.gz","output_annotate.vcf.gz")
 #def m_pileup_calc(bam_file,output_file,reference):
 #    with open(output_file,"w") as f:
 #        pysam_pileup = pysam.mpileup(bam_file,"-o",output_file,"-f",reference)
