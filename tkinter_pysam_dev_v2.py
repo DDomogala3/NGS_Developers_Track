@@ -6,7 +6,7 @@ from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 
 from mpileup_test_DDD_WGS import m_pileup_calc
-from mpileup_test import *
+from mpileup_test_DDD_WGS import *
 import os
 import shutil
 #from bioblend.galaxy import GalaxyInstance
@@ -18,7 +18,7 @@ import shutil
 
 #print(history.get_datasets())
 root = Tk()
-root.title("NGS Developer's Track APP V1.0")
+root.title("NGS Developer's Track APP V2.0")
 root.geometry('300x200')
 #test_samfile = pysam.AlignmentFile("/Volumes/Domogala_ext/ddomogalagatk/data/DDD_WGS/Galaxy117-[HBB_Gene].bam","rb")
 #reference = pysam.FastaFile("/Volumes/Domogala_ext/ddomogalagatk/data/DDD_WGS/Galaxy102-[hg19_v0_Homo_sapiens_assembly19.fasta].fasta")
@@ -45,11 +45,11 @@ def entry():
     #reference = "https://usegalaxy.eu/api/datasets/4838ba20a6d8676503e4f1cf8bb6b22a/display?to_ext=fasta"
 
     #generate_pileup_file(sam_file_pysam,chrm_coordinate,start_coordinate,end_coordinate,outfile_name)
-    m_pileup_calc(bamfile,outfile_name,region,reference)
+    m_pileup_calc(bamfile,outfile_name,reference)
     #core_filename = str(outfile_name[0])
     #print(core_filename)
     #out_vcf = outfile_name.strip(".bcf") + ".vcf"
-    vcf_calling(outfile_name,"out_vcf")
+    vcf_calling(outfile_name,"output.vcf")
     compress_vcf("output.vcf","output.vcf.gz")
     make_tab_vcf("output.vcf.gz","output.vcf.gz.csi")
     Annotate_VCF("output.vcf.gz","output_annotate.vcf")
