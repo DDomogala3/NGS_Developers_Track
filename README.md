@@ -15,5 +15,7 @@ Possibly have "if" statement to choose whether chromosome region is selected or 
 
 Name output annotated COSMIC vcf file
 
-In the future look into Google cloud functtions to work with streamlit
+In the future look into Google cloud functions to work with streamlit
+
+Does it need a region parameter?
 
