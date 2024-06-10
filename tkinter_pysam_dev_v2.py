@@ -26,6 +26,7 @@ def entry():
     global bamfile
     bamfile = bamfile_entry.get()
     outfile_name = outfile_entry.get()
+    annotated_vcf = avcf_entry.get()
     #chrm_coordinate = chrm_coordinate_entry.get()
     #start_coordinate = start_coordinate_entry.get()
     #end_coordinate = end_coordinate_entry.get()
@@ -43,20 +44,24 @@ def entry():
     #start 524657
     #end 5246555
     #reference = "https://usegalaxy.eu/api/datasets/4838ba20a6d8676503e4f1cf8bb6b22a/display?to_ext=fasta"
+    if region == "0":
+        m_pileup_calc(bamfile,outfile_name,reference)
+    else:
+        m_pileup_calc_region(bamfile,outfile_name,reference,region)
 
     #generate_pileup_file(sam_file_pysam,chrm_coordinate,start_coordinate,end_coordinate,outfile_name)
-    m_pileup_calc(bamfile,outfile_name,reference)
+    #m_pileup_calc(bamfile,outfile_name,reference)
     #core_filename = str(outfile_name[0])
     #print(core_filename)
     #out_vcf = outfile_name.strip(".bcf") + ".vcf"
     vcf_calling(outfile_name,"output.vcf")
     compress_vcf("output.vcf","output.vcf.gz")
     make_tab_vcf("output.vcf.gz","output.vcf.gz.csi")
-    Annotate_VCF("output.vcf.gz","output_annotate.vcf")
+    Annotate_VCF("output.vcf.gz",annotated_vcf)
 
 
     dir_name = tk.filedialog.askdirectory()
-    shutil.copy2("output_annotate.vcf",dir_name)
+    shutil.copy2(annotated_vcf,dir_name)
 
     #dir_name = tk.filedialog.askdirectory()
 
@@ -65,6 +70,7 @@ def entry():
     #label.pack
 bamfile = StringVar()
 outfile_name = StringVar()
+annotated_vcf = StringVar()
 region  = StringVar()
 reference = StringVar()
 #chrm_coordinate = StringVar()
@@ -74,6 +80,9 @@ bamfile_id_label = Label(root, text = 'Bamfile Path: ', font = ('Times',13,'bold
 bamfile_entry = Entry(root,textvariable = bamfile,font=('Times',13,'normal'))
 outfile_name_label = Label(root,text = "Outfile name: ", font = ('Times',13,'bold'))
 outfile_entry = Entry(root,textvariable = outfile_name, font = ('Times',13,'bold'))
+avcf_name_label = Label(root,text = "Annotated VCF: ", font = ('Times', 13, 'bold'))
+avcf_entry = Entry(root,textvariable = annotated_vcf, font = ('Times',13,'bold'))
+
 #chrm_coordinate_label = Label(root,text = "Chromosome: ", font = ('Times',13,'bold'))
 #chrm_coordinate_entry = Entry(root,textvariable = chrm_coordinate, font = ('Times',13,'bold'))
 #start_coordinate_label = Label(root, text = "Start coordinate: ", font = ('Times',13,'bold'))
@@ -89,10 +98,12 @@ bamfile_id_label.grid(row=1,column=1)
 bamfile_entry.grid(row=1,column=2)
 outfile_name_label.grid(row=2,column=1)
 outfile_entry.grid(row=2,column=2)
-region_id_label.grid(row=3,column=1)
-region_entry.grid(row=3,column=2)
-reference_id_label.grid(row=4,column=1)
-reference_entry.grid(row=4, column=2)
+avcf_name_label.grid(row=3,column=1)
+avcf_entry.grid(row=3,column=2)
+region_id_label.grid(row=4,column=1)
+region_entry.grid(row=4,column=2)
+reference_id_label.grid(row=5,column=1)
+reference_entry.grid(row=5, column=2)
 #chrm_coordinate_label.grid(row=3,column=1)
 #chrm_coordinate_entry.grid(row=3,column=2)
 #start_coordinate_label.grid(row=4,column=1)
