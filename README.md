@@ -12,7 +12,7 @@ Possibly have "if" statement to choose whether chromosome region is selected or 
 
 ---------------------------------------------------------
 <done>
--------------------------------------------------------
+
 **if region == "0", no region is selected. **
 Name output annotated COSMIC vcf file
 
