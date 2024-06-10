@@ -10,11 +10,11 @@ Along with the reference FASTA file
 
 
 Possibly have "if" statement to choose whether chromosome region is selected or annotate
-
+#Done
 ---------------------------------------------------------
-<done>
 
-**if region == "0", no region is selected. **
+
+if region == "0", no region is selected. **
 Name output annotated COSMIC vcf file
 #added tk entry for annotated vcf file
 -----------------------------------------------------------------------------------------------------
