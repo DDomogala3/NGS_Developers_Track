@@ -1,6 +1,7 @@
 Code for final project of NGS Developers Track course at MDL, June, 2024
+-----------------------------------------------------------------------------
 NGS App developers BAM to annotated vcf plan
-
+------------------------------------------------------------------------------
 input is BAM with .bai file with reference genome.
 Along with the reference FASTA file
 
