@@ -12,6 +12,12 @@ def m_pileup_calc(bam_file,output_file,reference):
        pysam_pileup = bcftools.mpileup(bam_file,"-o",output_file,"-f",reference)
        print(pysam_pileup)
        f.write(pysam_pileup)
+
+def m_pileup_calc_region(bam_file,output_file,reference,region):
+    with open(output_file,"w") as f:
+       pysam_pileup = bcftools.mpileup(bam_file,"-o",output_file,"-f",reference,"-r",region)
+       print(pysam_pileup)
+       f.write(pysam_pileup)
     #return pysam_pileup
 #def m_pileup_calc_no_region(bam_file,output_file):
 #    with open()
