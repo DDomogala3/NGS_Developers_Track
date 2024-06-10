@@ -21,7 +21,7 @@ In the future look into Google cloud functions to work with streamlit
 
 ------------------------------------------------------------
 <months off, needs a third host>
---------------------------------------------------------------
+
 Does it need a region parameter?
 ------------------------------------------------------------
 <added if else statement>
