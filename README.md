@@ -16,11 +16,11 @@ Possibly have "if" statement to choose whether chromosome region is selected or 
 
 **if region == "0", no region is selected. **
 Name output annotated COSMIC vcf file
+#added tk entry for annotated vcf file
+-----------------------------------------------------------------------------------------------------
+In the future look into Google cloud functions to work with streamlit #months off, needs a third host
 
-<added tk entry for annotated vcf file> 
-In the future look into Google cloud functions to work with streamlit #months off, needs a third hos
-
-------------------------------------------------------------
+-------------------------------------------------------------
 
 
 Does it need a region parameter?
